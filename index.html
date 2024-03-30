@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1 id="wrapper">00:00:00</h1>
+        <div class="buttons">
+            <img src="images/stop.png" onclick="watchStop()" class="pause">
+            <img src="images/start.png" onclick="watchStart()" class="play">
+            <img src="images/reset.png" onclick="watchReset()" class="resume">
+           
+        </div>
+    </div>
+</div>
+<script>
+    let [seconds,minutes,hours] = [0,0,0];
+    let displayTime = document.getElementById("wrapper")
+    let timer = null
+
+
+function stopWatch(){
+    seconds++;
+    if(seconds == 60)
+    {
+        seconds = 0
+        minutes++
+        if(minutes == 60)
+        {
+            minutes = 0
+            hours++
+        }
+    }
+
+    let h = hours < 10 ? "0" + hours : hours
+    let m = minutes < 10 ? "0" + minutes : minutes
+    let s = seconds < 10 ? "0" + seconds : seconds
+    displayTime.innerHTML = h + ":" + m + ":" + s 
+}
+
+function watchStart(){
+    if(timer !== null)
+    {
+        clearInterval(timer)
+    }
+    timer = setInterval(stopWatch,1000)
+}
+
+function watchStop(){
+    clearInterval(timer)
+}
+
+function watchReset(){
+    [seconds,minutes,hours] = [0,0,0]
+    displayTime.innerHTML = "00:00:00"
+    clearInterval(timer)
+
+}
+</script>
+</body>
+</html>

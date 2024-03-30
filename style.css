@@ -1,0 +1,56 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    background: rgb(213, 194, 231);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    width: 500px;
+    background-color: black;
+    text-align: center;
+    border-radius: 15px;
+
+    
+}
+#wrapper{
+    font-size: 50px;
+    color: white;
+    margin-top: 80px;
+
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    
+}
+.play{
+    
+   
+    width: 60px;
+    height: 60px;
+   
+    cursor: pointer;
+}
+.pause{
+    width: 50px;
+    height: 50px;
+    margin-left: 100px;
+    cursor: pointer;
+}
+.resume{
+    width: 50px;
+    height: 50px; 
+    margin-right: 100px;
+    cursor: pointer;
+}
